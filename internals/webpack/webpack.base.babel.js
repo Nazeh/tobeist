@@ -2,6 +2,7 @@
  * COMMON WEBPACK CONFIGURATION
  */
 
+const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
@@ -114,6 +115,7 @@ module.exports = options => ({
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development',
     }),
+    new AntdDayjsWebpackPlugin(),
   ]),
   resolve: {
     modules: ['node_modules', 'app'],
