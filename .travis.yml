@@ -8,9 +8,8 @@ services:
   - xvfb
 
 script:
-  # - npm test -- --maxWorkers=4
-  - npm lint -- --maxWorkers=4
-  # - npm run build
+  - npm test -- --maxWorkers=4
+  - npm run build
 
 before_install:
   - export CHROME_BIN=chromium-browser
