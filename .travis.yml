@@ -8,8 +8,9 @@ services:
   - xvfb
 
 script:
-  - npm test -- --maxWorkers=4
-  - npm run build
+  # - npm test -- --maxWorkers=4
+  - npm lint -- --maxWorkers=4
+  # - npm run build
 
 before_install:
   - export CHROME_BIN=chromium-browser
@@ -19,7 +20,7 @@ notifications:
   email:
     on_failure: change
 
-after_success: 'npm run coveralls'
+# after_success: 'npm run coveralls'
 
 cache:
   directories:
