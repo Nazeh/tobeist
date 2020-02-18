@@ -2,13 +2,12 @@ language: node_js
 
 node_js:
   - 'node'
-  - 'lts/*'
 
-services:
-  - xvfb
+# services:
+#   - xvfb
 
 script:
-  - npm test -- --maxWorkers=4
+  - npm eslint src -- --maxWorkers=4
   - npm run build
 
 before_install:
