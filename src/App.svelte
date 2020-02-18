@@ -1,11 +1,17 @@
 <script>
-    let x = 'dsf';
+    import Main from './components/Main.svelte';
 </script>
 
 <style>
-    h1 {
-        color: purple;
+    #app{
+        min-height: 100%;
+        display: flex;
+        justify-content: center;
+
+        background-color: #fafafa;
     }
 </style>
 
-<p>listen</p>
+<div id="app">
+    <Main>listen</Main>
+</div>
