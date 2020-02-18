@@ -6,8 +6,7 @@
     "dev": "webpack-dev-server --content-base public",
     "lint:js": "eslint --fix src/**/*.{js,svelte}",
     "lint:css": "stylelint src/**/*.{js,svelte}",
-    "format": "prettier --write src/**/{*.svelte,*.js}",
-    "lint": "npm run lint:js && npm run lint:css && npm run format",
+    "lint": "npm run lint:js && npm run lint:css",
     "test": "npm run lint"
   },
   "pre-commit": "lint",
@@ -16,7 +15,6 @@
     "css-loader": "^2.1.1",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-svelte3": "^2.7.3",
     "mini-css-extract-plugin": "^0.6.0",
@@ -32,10 +30,5 @@
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.3.1"
-  },
-  "dependencies": {
-    "firebase": "^7.8.2",
-    "rxfire": "^3.9.11",
-    "rxjs": "^6.5.4"
   }
 }
