@@ -1,11 +1,11 @@
 <script>
-  export let name;
+    let x = 'dsf';
 </script>
 
 <style>
-  h1 {
-    color: purple;
-  }
+    h1 {
+        color: purple;
+    }
 </style>
 
-<h1>Hello {name}!</h1>
+<p>listen</p>
