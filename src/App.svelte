@@ -1,8 +1,12 @@
 <script>
     import Main from './components/Main.svelte';
-
-    console.log(process.env.MAMA);
 </script>
+
+<div id="app">
+    <Main>
+
+    </Main>
+</div>
 
 <style>
     #app{
@@ -12,7 +16,3 @@
         background-color: #fafafa;
     }
 </style>
-
-<div id="app">
-    <Main>listen</Main>
-</div>
