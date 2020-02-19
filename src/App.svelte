@@ -1,5 +1,7 @@
 <script>
     import Main from './components/Main.svelte';
+
+    console.log(process.env.MAMA);
 </script>
 
 <style>
@@ -7,7 +9,6 @@
         min-height: 100%;
         display: flex;
         justify-content: center;
-
         background-color: #fafafa;
     }
 </style>
