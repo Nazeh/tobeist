@@ -7,34 +7,17 @@
     "es6": true,
     "browser": true
   },
-  "plugins": [
-    "svelte3",
-    "prettier"
-  ],
+  "plugins": ["svelte3", "prettier"],
   "extends": ["prettier"],
-  "overrides": [{
-    "files": ["**/*.svelte"],
-    "processor": "svelte3/svelte3",
-    "rules": {
-      "prettier/prettier": 0,
-      "indent": [
-        "error",
-        2
-      ],
-      "linebreak-style": [
-        "error",
-        "unix"
-      ],
-      "quotes": [
-        "error",
-        "single"
-      ],
-      "semi": [
-        "error",
-        "always"
-      ]
+  "overrides": [
+    {
+      "files": ["**/*.svelte"],
+      "processor": "svelte3/svelte3",
+      "rules": {
+        "prettier/prettier": 0
+      }
     }
-  }],
+  ],
   "rules": {
     "prettier/prettier": "error"
   }

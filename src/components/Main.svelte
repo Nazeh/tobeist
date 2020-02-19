@@ -1,4 +1,5 @@
 <script>
+
 </script>
 
 <style>
@@ -11,4 +12,6 @@
   }
 </style>
 
-  <main>listen</main>
+<main>
+  <slot />
+</main>
