@@ -1,2 +1,3 @@
-# tobeist
-A task management app made with love ❤️ in the image of Todoist Foundations
+# toBeist
+
+Task & project management web-app 📋 made with love ❤️ in the image of Todoist Foundations 🔥
