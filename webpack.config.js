@@ -15,6 +15,7 @@ module.exports = {
       utils: path.resolve('src/utils'),
       config: path.resolve('src/config'),
       components: path.resolve('src/components'),
+      containers: path.resolve('src/containers'),
     },
     extensions: ['.mjs', '.js', '.svelte'],
     mainFields: ['svelte', 'browser', 'module', 'main'],

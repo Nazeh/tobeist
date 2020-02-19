@@ -1,8 +1,4 @@
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
-
-const firebaseConfig = {
+export default {
   apiKey: process.env.apiKey,
   authDomain: 'tobeist.firebaseapp.com',
   databaseURL: 'https://tobeist.firebaseio.com',
@@ -12,10 +8,3 @@ const firebaseConfig = {
   appId: process.env.appId,
   measurementId: process.env.measurementId,
 };
-
-firebase.initializeApp(firebaseConfig);
-
-export const auth = firebase.auth();
-export const googleProvider = new firebase.auth.GoogleAuthProvider();
-export const db = firebase.firestore();
-export default firebase;
