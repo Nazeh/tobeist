@@ -1,0 +1,15 @@
+[data-theme='default'] {
+  $palette: (
+    'primary-main': #db4c3f,
+    'primary-light': lighten(#db4c3f, 15%),
+    'primary-dark': darken(#db4c3f, 15%),
+    'primary-contrastText': white,
+    'main-bg': white,
+    'app-bg': #fafafa,
+    'grey': #f1f1f1,
+  );
+
+  @each $key, $value in $palette {
+    --colors-#{$key}: #{$value};
+  }
+}

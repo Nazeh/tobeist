@@ -1,0 +1,10 @@
+[data-theme='default'] {
+  --colors-primary-main: #db4c3f;
+  --colors-primary-light: #e7887f;
+  --colors-primary-dark: #ad2c20;
+  --colors-primary-contrastText: white;
+  --colors-main-bg: white;
+  --colors-app-bg: #fafafa;
+  --colors-grey: #f1f1f1;
+}
+/*# sourceMappingURL=themes.css.map */
