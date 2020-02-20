@@ -15,7 +15,6 @@
 </style>
 
 <div id="app">
-
   {#if $user}
     <Main>
       <h3>Hi you are logged in!</h3>

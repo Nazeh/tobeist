@@ -1,7 +1,6 @@
 <script>
   import { login } from 'utils/auth';
   import Main from 'components/Main';
-
   const loginGoogle = () => login('GOOGLE');
 </script>
 
