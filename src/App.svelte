@@ -1,29 +1,28 @@
 <script>
   import { user, logOut } from 'utils/auth';
   import LoginPage from 'containers/LoginPage';
-  import Main from 'components/Main';
+  import Layout from './layout';
   import LoadingScreen from 'components/LoadingScreen';
+  import ThemeProvider from './themes/ThemeProvider';
 </script>
 
 <style>
   #app {
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: #fafafa;
+    height: 100%;
   }
 </style>
 
 <div id="app">
-
-  {#if $user}
-    <Main>
-      <h3>Hi you are logged in!</h3>
-      <button on:click={logOut}>Logout</button>
-    </Main>
-  {:else if $user === null}
-    <LoginPage />
-  {:else}
-    <LoadingScreen />
-  {/if}
+  <ThemeProvider>
+    {#if $user}
+      <Layout>
+        <h3>Hi you are logged in!</h3>
+        <button on:click={logOut}>Logout</button>
+      </Layout>
+    {:else if $user === null}
+      <LoginPage />
+    {:else}
+      <LoadingScreen />
+    {/if}
+  </ThemeProvider>
 </div>

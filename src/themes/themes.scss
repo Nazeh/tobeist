@@ -1,0 +1,94 @@
+// Constants
+$types: (
+  'bg': 'background-color',
+  'border': 'border-color',
+  'text': 'color',
+);
+
+$actions: (
+  '': '',
+  'hover_': ':hover',
+  'focus_': ':focus',
+);
+
+// Mixins
+
+@mixin tintShade(
+  $action-name,
+  $action,
+  $type,
+  $attr,
+  $color-name,
+  $color,
+  $range
+) {
+  .#{$action-name}#{$type}-#{$color-name}-100#{$action} {
+    #{$attr}: #{mix(white, $color, 100% * $range)};
+  }
+  .#{$action-name}#{$type}-#{$color-name}-200#{$action} {
+    #{$attr}: #{mix(white, $color, 60% * $range)};
+  }
+  .#{$action-name}#{$type}-#{$color-name}-300#{$action} {
+    #{$attr}: #{mix(white, $color, 30% * $range)};
+  }
+  .#{$action-name}#{$type}-#{$color-name}-400#{$action} {
+    #{$attr}: #{mix(white, $color, 10% * $range)};
+  }
+  .#{$action-name}#{$type}-#{$color-name}-500#{$action} {
+    #{$attr}: $color;
+  }
+  .#{$action-name}#{$type}-#{$color-name}-600#{$action} {
+    #{$attr}: #{mix(black, $color, 10% * $range)};
+  }
+  .#{$action-name}#{$type}-#{$color-name}-700#{$action} {
+    #{$attr}: #{mix(black, $color, 30% * $range)};
+  }
+  .#{$action-name}#{$type}-#{$color-name}-800#{$action} {
+    #{$attr}: #{mix(black, $color, 60% * $range)};
+  }
+  .#{$action-name}#{$type}-#{$color-name}-900#{$action} {
+    #{$attr}: #{mix(black, $color, 100% * $range)};
+  }
+}
+
+@mixin generateColors($color-name, $color) {
+  @each $action-name, $action in $actions {
+    @each $type, $attr in $types {
+      @include tintShade(
+        $action-name,
+        $action,
+        $type,
+        $attr,
+        $color-name,
+        $color,
+        0.5
+      );
+    }
+  }
+}
+
+body {
+  $colors: (
+    'red': #db4c3f,
+    'orange': #ff9933,
+    'yellow': #fad000,
+    'blue': #4073ff,
+    'green': #299438,
+  );
+
+  @each $color-name, $color in $colors {
+    @include generateColors($color-name, $color);
+  }
+}
+
+[data-theme='default'] {
+  // COLORS
+
+  $colors: (
+    'primary': #db4c3f,
+  );
+
+  @each $color-name, $color in $colors {
+    @include generateColors($color-name, $color);
+  }
+}

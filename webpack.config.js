@@ -24,6 +24,10 @@ module.exports = {
     path: __dirname + '/public',
     filename: '[name].js',
     chunkFilename: '[name].[id].js',
+    publicPath: '/',
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   module: {
     rules: [
