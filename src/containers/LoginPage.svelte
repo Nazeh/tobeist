@@ -46,18 +46,16 @@
 <div class="login-bg">
   <div class="wrapper">
     <form action="">
+      <div class="flex justify-center mb-5">
+        <h1 class="text-red-500 font-bold text-3xl ">tobeist</h1>
+      </div>
       <button class="btn " on:click={loginGoogle}>
         Log in with Google Account
       </button>
       <button class="btn" on:click={loginGoogle}>
         Log in with Facebook Account
       </button>
-      <button
-        class="btn bg-secondary-500 hover_bg-secondary-600 text-white py-2 px-2
-        rounded mt-2"
-        on:click={loginAnon}>
-        Try Demo
-      </button>
+      <button class="bg-tobeistred-200" on:click={loginAnon}>Try Demo</button>
       <hr />
       <LoginForm />
     </form>

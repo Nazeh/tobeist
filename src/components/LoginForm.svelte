@@ -44,8 +44,6 @@
   <hr />
   <p>
     Don't have an account?
-    <a href="/" on:click={handleSignUp} class="link text-red-500">
-      Sign up in seconds
-    </a>
+    <a href="/" on:click={handleSignUp}>Sign up in seconds</a>
   </p>
 {/if}

@@ -1,0 +1,15 @@
+html,
+body,
+#app {
+  height: 100%;
+}
+
+html {
+  --red-500: #db4c3f;
+  --red-600: #dd4b39;
+}
+
+.default-theme {
+  --color-bg-primary: var(--red-500);
+  --color-text-primary: var(--red-600);
+}
