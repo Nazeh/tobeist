@@ -20,7 +20,7 @@
 <style>
   .login-bg {
     height: 100%;
-    background-color: var(--colors-grey-light-4);
+    background-color: var(--colors-grey-400);
   }
 
   .wrapper {
@@ -46,9 +46,18 @@
 <div class="login-bg">
   <div class="wrapper">
     <form action="">
-      <Button clickHandler={loginGoogle}>Log in with Google Account</Button>
-      <Button clickHandler={loginGoogle}>Log in with Facebook Account</Button>
-      <Button clickHandler={loginAnon}>Try Demo</Button>
+      <button class="btn " on:click={loginGoogle}>
+        Log in with Google Account
+      </button>
+      <button class="btn" on:click={loginGoogle}>
+        Log in with Facebook Account
+      </button>
+      <button
+        class="btn bg-secondary-500 hover_bg-secondary-600 text-white py-2 px-2
+        rounded mt-2"
+        on:click={loginAnon}>
+        Try Demo
+      </button>
       <hr />
       <LoginForm />
     </form>

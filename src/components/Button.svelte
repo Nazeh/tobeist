@@ -8,7 +8,7 @@
   }
 
   button:hover {
-    background: rgba(0, 0, 0, 0.03);
+    background: var(--colors-grey-100);
     cursor: pointer;
     border-color: #aaa;
   }

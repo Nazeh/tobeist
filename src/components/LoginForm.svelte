@@ -15,13 +15,13 @@
   }
 
   button[type='submit'] {
-    background-color: var(--colors-primary);
+    background-color: var(--colors-primary-500);
     color: white;
     font-weight: 500;
   }
 
   button[type='submit']:hover {
-    background-color: var(--colors-primary-dark);
+    background-color: var(--colors-primary-600);
   }
 </style>
 
@@ -44,6 +44,8 @@
   <hr />
   <p>
     Don't have an account?
-    <a href="/" on:click={handleSignUp}>Sign up in seconds</a>
+    <a href="/" on:click={handleSignUp} class="link text-red-500">
+      Sign up in seconds
+    </a>
   </p>
 {/if}

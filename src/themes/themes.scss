@@ -1,67 +1,94 @@
-@use 'sass:math';
+// Constants
+$types: (
+  'bg': 'background-color',
+  'border': 'border-color',
+  'text': 'color',
+);
 
-// mixins
-@mixin tintShade($color-name, $color, $narrower) {
-  --colors-#{$color-name}-light-5: #{mix(white, $color, 95% / $narrower)};
-  --colors-#{$color-name}-light-4: #{mix(white, $color, 80% / $narrower)};
-  --colors-#{$color-name}-light-3: #{mix(white, $color, 40% / $narrower)};
-  --colors-#{$color-name}-light-2: #{mix(white, $color, 20% / $narrower)};
-  --colors-#{$color-name}-light: #{mix(white, $color, 10% / $narrower)};
-  --colors-#{$color-name}: #{$color};
-  --colors-#{$color-name}-dark: #{mix(black, $color, 10% / $narrower)};
-  --colors-#{$color-name}-dark-2: #{mix(black, $color, 20% / $narrower)};
-  --colors-#{$color-name}-dark-3: #{mix(black, $color, 40% / $narrower)};
-  --colors-#{$color-name}-dark-4: #{mix(black, $color, 80% / $narrower)};
-  --colors-#{$color-name}-dark-5: #{mix(black, $color, 95% / $narrower)};
+$actions: (
+  '': '',
+  'hover_': ':hover',
+  'focus_': ':focus',
+);
+
+// Mixins
+
+@mixin tintShade(
+  $action-name,
+  $action,
+  $type,
+  $attr,
+  $color-name,
+  $color,
+  $range
+) {
+  .#{$action-name}#{$type}-#{$color-name}-100#{$action} {
+    #{$attr}: #{mix(white, $color, 100% * $range)};
+  }
+  .#{$action-name}#{$type}-#{$color-name}-200#{$action} {
+    #{$attr}: #{mix(white, $color, 60% * $range)};
+  }
+  .#{$action-name}#{$type}-#{$color-name}-300#{$action} {
+    #{$attr}: #{mix(white, $color, 30% * $range)};
+  }
+  .#{$action-name}#{$type}-#{$color-name}-400#{$action} {
+    #{$attr}: #{mix(white, $color, 10% * $range)};
+  }
+  .#{$action-name}#{$type}-#{$color-name}-500#{$action} {
+    #{$attr}: $color;
+  }
+  .#{$action-name}#{$type}-#{$color-name}-600#{$action} {
+    #{$attr}: #{mix(black, $color, 10% * $range)};
+  }
+  .#{$action-name}#{$type}-#{$color-name}-700#{$action} {
+    #{$attr}: #{mix(black, $color, 30% * $range)};
+  }
+  .#{$action-name}#{$type}-#{$color-name}-800#{$action} {
+    #{$attr}: #{mix(black, $color, 60% * $range)};
+  }
+  .#{$action-name}#{$type}-#{$color-name}-900#{$action} {
+    #{$attr}: #{mix(black, $color, 100% * $range)};
+  }
 }
 
-// General
-// Colors
+@mixin generateColors($color-name, $color) {
+  @each $action-name, $action in $actions {
+    @each $type, $attr in $types {
+      @include tintShade(
+        $action-name,
+        $action,
+        $type,
+        $attr,
+        $color-name,
+        $color,
+        0.5
+      );
+    }
+  }
+}
+
 body {
-  @include tintShade('grey', grey, 1);
-}
+  $colors: (
+    'red': #db4c3f,
+    'orange': #ff9933,
+    'yellow': #fad000,
+    'blue': #4073ff,
+    'green': #299438,
+  );
 
-// Tags
-
-hr {
-  margin: 1em 0;
-  border: none;
-  height: 1px;
-  background-color: var(--colors-grey-light-4);
-}
-
-label {
-  font-weight: bold;
-  margin-bottom: 7px;
-}
-
-button {
-  background: none;
-  border-radius: 3px;
-  height: 38px;
-}
-
-button:hover {
-  cursor: pointer;
+  @each $color-name, $color in $colors {
+    @include generateColors($color-name, $color);
+  }
 }
 
 [data-theme='default'] {
   // COLORS
 
-  @include tintShade('primary', #db4c3f, 3);
-
-  $palette: (
-    'primary-main': #db4c3f,
-    'main-bg': white,
-    'app-bg': #fafafa,
+  $colors: (
+    'primary': #db4c3f,
   );
 
-  @each $key, $value in $palette {
-    --colors-#{$key}: #{($value)};
-  }
-
-  a {
-    color: var(--colors-primary-main);
-    cursor: pointer;
+  @each $color-name, $color in $colors {
+    @include generateColors($color-name, $color);
   }
 }
