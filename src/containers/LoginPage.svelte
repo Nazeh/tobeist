@@ -1,7 +1,8 @@
 <script>
   import { login } from 'utils/auth';
   import Main from '../layout/Main';
-  import LoginButton from 'components/LoginButton';
+  import Button from 'components/Button';
+  import LoginForm from 'components/LoginForm';
 
   const loginAnon = () => {
     spinner = true;
@@ -19,7 +20,7 @@
 <style>
   .login-bg {
     height: 100%;
-    background-color: #f1f1f1;
+    background-color: var(--colors-grey-light-4);
   }
 
   .wrapper {
@@ -45,8 +46,11 @@
 <div class="login-bg">
   <div class="wrapper">
     <form action="">
-      <LoginButton clickHandler={loginGoogle}>Signin with Google</LoginButton>
-      <LoginButton clickHandler={loginAnon}>Signin Anonymously</LoginButton>
+      <Button clickHandler={loginGoogle}>Log in with Google Account</Button>
+      <Button clickHandler={loginGoogle}>Log in with Facebook Account</Button>
+      <Button clickHandler={loginAnon}>Try Demo</Button>
+      <hr />
+      <LoginForm />
     </form>
   </div>
 </div>

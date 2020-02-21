@@ -1,15 +1,67 @@
+@use 'sass:math';
+
+// mixins
+@mixin tintShade($color-name, $color, $narrower) {
+  --colors-#{$color-name}-light-5: #{mix(white, $color, 95% / $narrower)};
+  --colors-#{$color-name}-light-4: #{mix(white, $color, 80% / $narrower)};
+  --colors-#{$color-name}-light-3: #{mix(white, $color, 40% / $narrower)};
+  --colors-#{$color-name}-light-2: #{mix(white, $color, 20% / $narrower)};
+  --colors-#{$color-name}-light: #{mix(white, $color, 10% / $narrower)};
+  --colors-#{$color-name}: #{$color};
+  --colors-#{$color-name}-dark: #{mix(black, $color, 10% / $narrower)};
+  --colors-#{$color-name}-dark-2: #{mix(black, $color, 20% / $narrower)};
+  --colors-#{$color-name}-dark-3: #{mix(black, $color, 40% / $narrower)};
+  --colors-#{$color-name}-dark-4: #{mix(black, $color, 80% / $narrower)};
+  --colors-#{$color-name}-dark-5: #{mix(black, $color, 95% / $narrower)};
+}
+
+// General
+// Colors
+body {
+  @include tintShade('grey', grey, 1);
+}
+
+// Tags
+
+hr {
+  margin: 1em 0;
+  border: none;
+  height: 1px;
+  background-color: var(--colors-grey-light-4);
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+button {
+  background: none;
+  border-radius: 3px;
+  height: 38px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
 [data-theme='default'] {
+  // COLORS
+
+  @include tintShade('primary', #db4c3f, 3);
+
   $palette: (
     'primary-main': #db4c3f,
-    'primary-light': lighten(#db4c3f, 15%),
-    'primary-dark': darken(#db4c3f, 15%),
-    'primary-contrastText': white,
     'main-bg': white,
     'app-bg': #fafafa,
-    'grey': #f1f1f1,
   );
 
   @each $key, $value in $palette {
-    --colors-#{$key}: #{$value};
+    --colors-#{$key}: #{($value)};
+  }
+
+  a {
+    color: var(--colors-primary-main);
+    cursor: pointer;
   }
 }
