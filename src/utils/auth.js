@@ -16,8 +16,7 @@ const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/
 );
 
 export const login = async method => {
-  let errorMessage;
-  const addError = err => (errorMessage = err.message);
+  const addError = err => alert(err.message);
 
   switch (method) {
     case 'GOOGLE':
@@ -33,7 +32,6 @@ export const login = async method => {
     default:
       console.log('Specify a sign in method!');
   }
-  return errorMessage;
 };
 
 export const signup = (email, password) =>

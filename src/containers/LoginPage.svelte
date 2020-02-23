@@ -108,12 +108,10 @@
         <h1 class="text-red-500 font-bold text-4xl">tobeist</h1>
       </div>
       {oauthError ? oauthError : ''}
-      <LoginButton
-        clickHandler={() => login('GOOGLE').then(res => (oauthError = res))}>
+      <LoginButton clickHandler={() => login('GOOGLE')}>
         Log in with Google Account
       </LoginButton>
-      <LoginButton
-        clickHandler={() => login('DEMO').then(res => (oauthError = res))}>
+      <LoginButton clickHandler={() => login('DEMO')}>
         Log in Anonymously
       </LoginButton>
       <div class="seperator ">
