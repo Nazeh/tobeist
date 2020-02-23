@@ -1,11 +1,11 @@
 <script>
   import { fade } from 'svelte/transition';
   import SVG from 'components/SVG';
+  import Spinner from 'components/Spinner';
   import logo from 'images/tobeist-logo.svg';
-  import spinner from 'images/tobeist-spinner.svg';
 </script>
 
-<style global>
+<style>
   #loading-screen {
     background-color: white;
     min-height: 100%;
@@ -14,23 +14,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    .spinner {
-      animation: spin 0.6s linear infinite both;
-    }
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(359deg);
-    }
   }
 </style>
 
-<div id="loading-screen" transition:fade={{ duration: 200 }}>
+<div id="loading-screen" transition:fade={{ duration: 100, delay: 300 }}>
   <SVG src={logo} class="w-24 mb-10">-</SVG>
-  <SVG src={spinner} class="spinner w-8">-</SVG>
+  <Spinner class="w-8 " />
 </div>

@@ -1,15 +1,11 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import { authState } from 'rxfire/auth';
 import firebaseConfig from 'config/firebase';
 
 firebase.initializeApp(firebaseConfig);
 
-const auth = firebase.auth();
+export const auth = firebase.auth();
 const googleProvider = new firebase.auth.GoogleAuthProvider();
-const facebookProvider = new firebase.auth.FacebookAuthProvider();
-
-export let user = authState(auth);
 
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
   navigator.userAgent,
@@ -35,13 +31,11 @@ export const login = async method => {
 };
 
 export const signup = (email, password) =>
-  firebase
-    .auth()
-    .createUserWithEmailAndPassword(email, password)
-    .catch(error => {
-      return error;
-    });
+  auth.createUserWithEmailAndPassword(email, password);
 
-export const loginWithEmail = () => {};
+export const loginWithEmail = (email, password) =>
+  auth.signInWithEmailAndPassword(email, password);
+
+export const resetPassword = email => auth.sendPasswordResetEmail(email);
 
 export const logOut = () => auth.signOut();
