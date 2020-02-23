@@ -4,6 +4,7 @@ module.exports = {
   plugins: [
     require('postcss-import'),
     require('tailwindcss'),
+    require('postcss-nested'),
     isProd &&
       require('@fullhuman/postcss-purgecss')({
         content: ['./src/**/*.svelte', './public/index.html'],
