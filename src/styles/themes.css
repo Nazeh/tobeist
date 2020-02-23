@@ -1,9 +1,10 @@
 #app {
-  --red-500: #db4c3f;
-  --red-600: #dd4b39;
+  --red-500: #db4035;
 }
 
 .default-theme {
-  --color-bg-primary: var(--red-500);
-  --color-text-primary: var(--red-600);
+  --bg-primary: var(--red-500);
+  --bg-primary: var(--red-500);
+  --bg-primary: var(--red-500);
+  --color-text-primary: var(--red-500);
 }
