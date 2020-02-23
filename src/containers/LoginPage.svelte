@@ -20,44 +20,49 @@
 <style>
   .login-bg {
     height: 100%;
-    background-color: var(--colors-grey-400);
   }
 
-  .wrapper {
+  main {
     width: 750px;
     height: 100%;
     max-width: 100%;
     margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: white;
   }
 
-  form {
+  .wrapper {
     width: 332px;
     max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  }
+
+  .btn-auth {
+    @apply bg-transparent h-10 border border-gray-300 mb-3 rounded;
   }
 </style>
 
-<div class="login-bg">
-  <div class="wrapper">
-    <form action="">
+<div class="login-bg bg-gray-200">
+  <main class="flex flex-col justify-center items-center">
+    <div class="wrapper flex flex-col justify-center">
       <div class="flex justify-center mb-5">
         <h1 class="text-red-500 font-bold text-3xl ">tobeist</h1>
       </div>
-      <button class="btn " on:click={loginGoogle}>
+      <button
+        on:click={loginGoogle}
+        class="btn-auth hover:border-gray-500 hover:bg-gray-200">
         Log in with Google Account
       </button>
-      <button class="btn" on:click={loginGoogle}>
+      <button
+        on:click={loginGoogle}
+        class="btn-auth hover:border-gray-500 hover:bg-gray-200">
         Log in with Facebook Account
       </button>
-      <button class="bg-tobeistred-200" on:click={loginAnon}>Try Demo</button>
+      <button
+        on:click={loginAnon}
+        class="btn-auth hover:border-gray-500 hover:bg-gray-200">
+        Try Demo
+      </button>
       <hr />
       <LoginForm />
-    </form>
-  </div>
+    </div>
+  </main>
 </div>

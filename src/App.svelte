@@ -5,6 +5,10 @@
   import LoadingScreen from 'components/LoadingScreen';
 </script>
 
+<style global>
+  @import url('styles/global.css');
+</style>
+
 <div id="app" class="default-theme">
   {#if $user}
     <Layout>

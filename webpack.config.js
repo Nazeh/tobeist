@@ -13,6 +13,7 @@ module.exports = {
     alias: {
       svelte: path.resolve('node_modules', 'svelte'),
       utils: path.resolve('src/utils'),
+      styles: path.resolve('src/styles'),
       config: path.resolve('src/config'),
       components: path.resolve('src/components'),
       containers: path.resolve('src/containers'),
@@ -38,6 +39,9 @@ module.exports = {
           options: {
             emitCss: true,
             hotReload: true,
+            preprocess: require('svelte-preprocess')({
+              postcss: true,
+            }),
           },
         },
       },

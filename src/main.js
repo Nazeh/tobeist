@@ -1,7 +1,7 @@
 import App from './App.svelte';
-import { cleanUrl } from './utils/cleanUrl';
+import decorateUrl from './utils/decorateUrl';
 
-cleanUrl();
+decorateUrl();
 
 const app = new App({
   target: document.body,
