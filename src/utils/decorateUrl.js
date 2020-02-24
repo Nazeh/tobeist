@@ -1,4 +1,4 @@
-export const cleanUrl = () => {
+export default () => {
   try {
     window.history.pushState('', '', '/app');
   } catch {

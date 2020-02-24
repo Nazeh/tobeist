@@ -1,0 +1,10 @@
+#app {
+  --red-500: #db4035;
+}
+
+.default-theme {
+  --bg-primary: var(--red-500);
+  --bg-primary: var(--red-500);
+  --bg-primary: var(--red-500);
+  --color-text-primary: var(--red-500);
+}
