@@ -7,7 +7,7 @@
 </script>
 
 <style global>
-  @import url('styles/global.css');
+  @import url('styles/main.css');
 </style>
 
 <div id="app" class="default-theme">

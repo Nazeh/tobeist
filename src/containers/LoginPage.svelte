@@ -9,9 +9,17 @@
   let formType;
 </script>
 
-<style global>
+<style>
   #login-bg {
-    min-height: 100%;
+    height: 100%;
+
+    main {
+      width: 750px;
+      height: 100%;
+      max-width: 100%;
+      margin: auto;
+      background-color: white;
+    }
 
     input,
     button {
@@ -26,14 +34,6 @@
       &:hover {
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
       }
-    }
-
-    main {
-      width: 750px;
-      height: 100%;
-      max-width: 100%;
-      margin: auto;
-      background-color: white;
     }
 
     .wrapper {
